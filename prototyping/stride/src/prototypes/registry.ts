@@ -53,7 +53,7 @@ export const prototypes: Prototype[] = [
     slug: "athlete-intelligence",
     title: "Athlete intelligence",
     description:
-      "Tests whether plain-language insights drawn from an athlete's own log (load, recovery, consistency, trend) plus a suggested next session help them decide what to train next instead of reading charts alone. Extends /training with the insights in three placements: briefing above the stats, side panel from the header, and tags on activity rows.",
+      "Tests whether plain-language insights drawn from an athlete's own log (load, recovery, consistency, trend) plus a suggested next session help them decide what to train next instead of reading charts alone. Extends /training with the insights in three placements: briefing above the stats, side panel from the header, and tags on activity rows. A fourth variant, Idle comeback, tests whether an athlete who has not recorded for 14+ days is more likely to record again within 14 days when shown a recap of their last month of training and one easy restart session.",
     Component: AthleteIntelligencePrototype,
   },
 ];

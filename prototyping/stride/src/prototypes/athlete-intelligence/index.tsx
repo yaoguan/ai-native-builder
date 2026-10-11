@@ -36,6 +36,7 @@ import {
   type Recommendation,
   type Tone,
 } from "./intel";
+import { IdleComeback } from "./IdleCard";
 
 const SPORT_COLORS: Record<Sport, string> = {
   Run: "var(--primary)",
@@ -51,7 +52,7 @@ const TONE_DOT: Record<Tone, string> = {
   neutral: "bg-muted-foreground/50",
 };
 
-type VariantId = "briefing" | "side-panel" | "row-tags";
+type VariantId = "briefing" | "side-panel" | "row-tags" | "idle";
 
 export default function AthleteIntelligencePrototype() {
   const [variant, setVariant] = useState<VariantId>("briefing");
@@ -65,6 +66,8 @@ export default function AthleteIntelligencePrototype() {
         briefing={
           variant === "briefing" ? (
             <Briefing insights={insights} recommendation={recommendation} headline={headline} />
+          ) : variant === "idle" ? (
+            <IdleComeback />
           ) : undefined
         }
         headerAction={
@@ -472,6 +475,7 @@ function VariantSwitcher({
     { id: "briefing", label: "Briefing" },
     { id: "side-panel", label: "Side panel" },
     { id: "row-tags", label: "Row tags" },
+    { id: "idle", label: "Idle comeback" },
   ];
   return (
     <div className="fixed bottom-5 left-1/2 z-50 -translate-x-1/2">
